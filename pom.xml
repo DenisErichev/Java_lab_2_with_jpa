@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.example</groupId>
+  <artifactId>Office</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>Office</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <dependencies>
+    <!-- Spring Framework -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>6.1.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-beans</artifactId>
+      <version>6.1.5</version>
+    </dependency>
+
+    <!-- Hibernate -->
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-core</artifactId>
+      <version>6.4.4.Final</version>
+    </dependency>
+
+    <!-- Spring Data JPA -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-jpa</artifactId>
+      <version>3.2.4</version>
+    </dependency>
+    <!-- Slf4j Simple -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.7.32</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <version>3.2.4</version>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>42.4.0</version>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>copy-dependencies</id>
+            <phase>prepare-package</phase>
+            <goals>
+              <goal>copy-dependencies</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>
+                ${project.build.directory}/libs
+              </outputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
+
+
+
+
+<!--<dependencies>-->
+<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-core &ndash;&gt;-->
+<!--<dependency>-->
+<!--  <groupId>org.springframework</groupId>-->
+<!--  <artifactId>spring-core</artifactId>-->
+<!--  <version>6.1.5</version>-->
+<!--</dependency>-->
+<!--<dependency>-->
+<!--  <groupId>junit</groupId>-->
+<!--  <artifactId>junit</artifactId>-->
+<!--  <version>3.8.1</version>-->
+<!--  <scope>test</scope>-->
+<!--</dependency>-->
+<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-context &ndash;&gt;-->
+<!--<dependency>-->
+<!--  <groupId>org.springframework</groupId>-->
+<!--  <artifactId>spring-context</artifactId>-->
+<!--  <version>6.1.2</version>-->
+<!--</dependency>-->
+<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-beans &ndash;&gt;-->
+<!--<dependency>-->
+<!--  <groupId>org.springframework</groupId>-->
+<!--  <artifactId>spring-beans</artifactId>-->
+<!--  <version>6.1.2</version>-->
+<!--</dependency>-->
+<!--<dependency>-->
+<!--  <groupId>org.postgresql</groupId>-->
+<!--  <artifactId>postgresql</artifactId>-->
+<!--  <version>42.4.0</version>-->
+<!--</dependency>-->
+<!--&lt;!&ndash; https://mvnrepository.com/artifact/com.h2database/h2 &ndash;&gt;-->
+<!--<dependency>-->
+<!--  <groupId>com.h2database</groupId>-->
+<!--  <artifactId>h2</artifactId>-->
+<!--  <version>2.2.224</version>-->
+<!--  <scope>test</scope>-->
+<!--</dependency>-->
+<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.slf4j/slf4j-simple &ndash;&gt;-->
+<!--<dependency>-->
+<!--  <groupId>org.slf4j</groupId>-->
+<!--  <artifactId>slf4j-simple</artifactId>-->
+<!--  <version>2.0.0-alpha0</version>-->
+<!--  <scope>runtime</scope>-->
+<!--</dependency>-->
+<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa &ndash;&gt;-->
+<!--<dependency>-->
+<!--  <groupId>org.springframework.data</groupId>-->
+<!--  <artifactId>spring-data-jpa</artifactId>-->
+<!--  <version>3.2.4</version>-->
+<!--</dependency>-->
+<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core &ndash;&gt;-->
+<!--<dependency>-->
+<!--  <groupId>org.hibernate</groupId>-->
+<!--  <artifactId>hibernate-core</artifactId>-->
+<!--  <version>6.4.4.Final</version>-->
+<!--</dependency>-->
+<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework/spring-tx &ndash;&gt;-->
+<!--<dependency>-->
+<!--  <groupId>org.springframework</groupId>-->
+<!--  <artifactId>spring-tx</artifactId>-->
+<!--  <version>6.1.2</version>-->
+<!--</dependency>-->
+<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web &ndash;&gt;-->
+<!--<dependency>-->
+<!--  <groupId>org.springframework.boot</groupId>-->
+<!--  <artifactId>spring-boot-starter-web</artifactId>-->
+<!--  <version>3.2.4</version>-->
+<!--</dependency>-->
+<!--</dependencies>-->
